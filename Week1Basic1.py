@@ -10,8 +10,8 @@ while count < length:
 
 taken = []
 listRand = []
-
 #creates array ready to have values inserted
+
 for i in range (0,length):
   listRand.append(i)
 

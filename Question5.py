@@ -1,15 +1,13 @@
 INPUT nOrder
 
-
-b <- [ ]
-c <- [ ]
-
+b <- []
+c <- []
 
 CREATE_ARRAY ()
 	count <- 0
 count2 <- 0
-	x <- [ ]
-	array <- [ ]
+	x <- []
+	array <- []
 	WHILE count < nOrder
 		count1 <- 0
 		WHILE count1 < nOrder
@@ -21,10 +19,9 @@ count2 <- 0
 	END WHILE
 	RETURN array
 
-
 ADD_MATRICES (mat1, mat2)
-	added <- [ ]
-	row <- [ ]
+	added <- []
+	row <- []
 	FOR x = 0 to nOrder
 		FOR y = 0 to nOrder
 			temp <- mat1[x][y] + mat2[x][y]
@@ -34,10 +31,9 @@ ADD_MATRICES (mat1, mat2)
 	END FOR
 	RETURN added
 
-
 SUBTRACT_MATRICES (mat1, mat2)
-	sub <- [ ]
-	row <- [ ]
+	sub <- []
+	row <- []
 	FOR x = 0 to nOrder
 		FOR y = 0 to nOrder
 			temp <- mat1[x][y] - mat2[x][y]
@@ -48,9 +44,8 @@ sub.append(row)
 	END FOR
 	RETURN sub
 
-
 MULTIPLY_MATRICES (mat1, mat2)
-	mult <- [ ]
+	mult <- []
 	temp2 <- 0
 	count <- 0
 	FOR y = 0 to nOrder
@@ -65,7 +60,6 @@ MULTIPLY_MATRICES (mat1, mat2)
 	END FOR
 	RETURN mult
 
-
 MULTIPLY_MAT_CONST(mat1, const)
 FOR i = 0 to nOrder
 		FOR j = 0 to nOrder
@@ -73,9 +67,6 @@ FOR i = 0 to nOrder
 		END FOR
 	END FOR
 	RETURN mat1
-
-
-	
 	
 tmp1 <- MULTIPLY_MATRICES(b,c)
 tmp2 <- ADD_MATRICES(b,c)

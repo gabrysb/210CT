@@ -1,36 +1,21 @@
 """
-x <- 2
-ISPRIME(n,x)
-	IF n < x
-		return False
-	ELSE IF n = x
-		return True
-	ELSE IF n MOD x != 0
-		CALL ISPRIME(n, x+1)
-ELSE IF n MOD x = 0
-		return False
-	
-IF prime = False
-	OUTPUT “not a prime”
-ELSE IF prime = True
-	OUTPUT “is a prime”
-Write a recursive function (pseudocode and code) to check if a number n is prime. In this the idea is to increase the input of the function until n (number to be tested) is divisible by x (variable starting at 2) or is equal to x. If n is divisible before x is equal to n, then the number isn’t prime. However if x is equal to n, then we’ve gone through all possible factors and the number is prime."""
+INPUT string
+strList <- DETERMINE string AS LIST
+//each word is an element in the list
+reversed <- []
+FOR i = 0 to len(strList)
+	APPEND 0 TO REVERSED
+FOR x = len(strList) to 0 where INCREMENT = -1 and y = 0 to len(strList)
+	reversed[x] <- strList[y]
+OUTPUT reversed
+Write the pseudocode and code for a function that reverses the words in a sentence. Input: "This is awesome" Output: "awesome is This". Give the Big O notation. The code generates a list from a string input and then generates a list of the same size. You then iterate through both lists, one from the start and one from the end until you fill up the reversed list.
+The Big O notation for this is O(n)."""
 
-n = int(input("enter number"))
-x = 2
-def is_prime(n,x):
-if n < x:
-   		return(False)
- 	elif n == x:
-   		return(True)
- 	elif (n%x) != 0:
-   		return(is_prime(n, x+1))
- 	elif (n%x) == 0:
-   		return(False)
-
-y = is_prime(n,x)    
-print(y)    
-if y == False:
- 	print("is not prime")
-elif y == True:
- 	print("is prime")
+s = input("input your sentence")
+strList = s.split()
+reverse = []
+for i in range(0,len(strList)):    #O(n)
+ 	reverse.append(0)
+for x,y in zip(range(len(strList)-1, -1, -1), range(0, len(strList))): ##O(n)
+ 	reverse[x] = strList[y]
+print(reverse)
